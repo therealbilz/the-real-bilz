@@ -148,8 +148,9 @@ Every strategy is rooted in data, user behavior, and proven conversion principle
     <h2 class="reveal">Ready to Scale Your Brand?</h2>
     <p class="reveal reveal-delay-1">Let's discuss how we can help you achieve your business goals.</p>
 
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
   <input type="hidden" name="form-name" value="contact">
+  <input type="hidden" name="bot-field"> <!-- spam protection -->
   <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
   <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
   <textarea name="message" placeholder="Your Message" autocomplete="off" required></textarea>
