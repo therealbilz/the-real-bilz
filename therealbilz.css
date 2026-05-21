@@ -72,10 +72,10 @@ nav {
   max-width: 900px;
   padding: 10px 20px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(223, 208, 208, 0.27);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(91, 44, 255, 0.20);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(221, 210, 210, 0.08);
 }
 
 nav a {
@@ -88,7 +88,7 @@ nav a {
 }
 
 nav a:hover {
-  background: rgba(187, 95, 199, 0.15);
+  background: rgba(124, 55, 133, 0.19);
   color: #ffffff;
   backdrop-filter: blur(8px);
 }
@@ -185,6 +185,7 @@ nav a:hover {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
+
 @keyframes heroZoom {
   from { transform: scale(1.12); }
   to   { transform: scale(1); }
@@ -227,7 +228,7 @@ nav a:hover {
 }
 
 .hero h1 span {
-  color: #ffffff;
+  color: #ffffff; /* gold instead of soft purple */
 }
 
 .hero p {
@@ -631,9 +632,10 @@ footer {
 .footer-col {
   flex: 1;
   min-width: 180px;
-  text-align: center;
-   
-   .footer-col ul {
+  text-align: center; /* ADD THIS */
+}
+
+.footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -704,6 +706,7 @@ footer {
   margin-top: 16px;
 }
 
+
 .footer-socials a {
   width: 36px;
   height: 36px;
@@ -734,31 +737,77 @@ footer {
    RESPONSIVE
 =========================== */
 @media (max-width: 768px) {
+  /* NAV — show all links in one row */
+  .nav-wrapper {
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  nav {
+    width: 95%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: auto;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .nav-socials {
+    display: none; /* HIDE on mobile — too cramped */
+  }
+
+  .logo {
+    width: 40px;
+    height: auto;
+  }
+
+  /* HERO — fix height and font sizes */
   .hero {
     min-height: 100svh;
-    padding: 20px 16px;
+    padding: 0;
   }
 
   .hero-overlay {
-    padding: 30px 20px;
+    padding: 24px 16px;
     width: 92%;
-  }
-
-  .static-text {
-    font-size: 2.2rem;
-  }
-
-  #rotating-text {
-    font-size: 2.2rem;
+    margin-top: 60px; /* clears the fixed nav */
   }
 
   .hero-tag {
-    font-size: 0.78rem;
-    padding: 5px 12px;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    white-space: nowrap; /* keeps it on one line */
+  }
+
+  .static-text {
+    font-size: 2rem;
+  }
+
+  #rotating-text {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
   }
 
   .hero-sub {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    margin-bottom: 20px;
   }
 
   .hero-btns {
@@ -772,10 +821,7 @@ footer {
     text-align: center;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
+  /* SECTIONS */
   .services-container {
     flex-direction: column;
     align-items: center;
@@ -791,44 +837,6 @@ footer {
     max-width: 320px;
   }
 
-  @media (max-width: 768px) {
-  .nav-wrapper {
-    top: 10px;
-    padding: 0 10px;
-  }
-
-  nav {
-    width: 95%;
-    padding: 10px 15px;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    width: 100%;
-  }
-
-  .nav-links a {
-    font-size: 0.85rem;
-  }
-
-  .nav-socials {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 8px;
-  }
-
-  .logo {
-    width: 50px;
-    height: auto;
-  }
-}
   section {
     padding: 60px 15px;
   }
