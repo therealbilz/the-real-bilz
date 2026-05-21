@@ -181,8 +181,10 @@ nav a:hover {
   z-index: 0;
   animation: heroZoom 8s ease-out forwards;
   will-change: transform;
+  /* ADD THESE TWO */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
-
 @keyframes heroZoom {
   from { transform: scale(1.12); }
   to   { transform: scale(1); }
@@ -629,6 +631,19 @@ footer {
 .footer-col {
   flex: 1;
   min-width: 180px;
+  text-align: center;
+   
+   .footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
 }
 
 .footer-brand {
@@ -685,6 +700,8 @@ footer {
 .footer-socials {
   display: flex;
   gap: 10px;
+  justify-content: center; /* ADD THIS */
+  margin-top: 16px;
 }
 
 .footer-socials a {
@@ -774,12 +791,44 @@ footer {
     max-width: 320px;
   }
 
-  nav {
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 20px;
+  @media (max-width: 768px) {
+  .nav-wrapper {
+    top: 10px;
+    padding: 0 10px;
   }
 
+  nav {
+    width: 95%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .nav-socials {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 50px;
+    height: auto;
+  }
+}
   section {
     padding: 60px 15px;
   }
