@@ -321,6 +321,26 @@ Every strategy is rooted in data, user behavior, and proven conversion principle
   const menuOverlay = document.getElementById('menuOverlay');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
+  // HAMBURGER COLOR SWITCH
+    const whyUsTop = whyUs.offsetTop;
+    const whyUsBottom = whyUsTop + whyUs.offsetHeight;
+    const contactTop = contact.offsetTop;
+    const contactBottom = contactTop + contact.offsetHeight;
+
+    const isOnDarkSection =
+      scrollY < window.innerHeight * 0.7 ||
+      (scrollY >= whyUsTop - 80 && scrollY < whyUsBottom - 80) ||
+      (scrollY >= contactTop - 80 && scrollY < contactBottom - 80);
+
+    if (isOnDarkSection) {
+      nav.style.background = 'rgba(255, 255, 255, 0.15)';
+      nav.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+      navLinks.forEach(a => a.style.color = '#ffffff');
+    } else {
+      nav.style.background = 'rgba(255, 255, 255, 0.17)';
+      nav.style.borderColor = 'rgba(91, 44, 255, 0.15)';
+      navLinks.forEach(a => a.style.color = '#111111');
+    }
   function openMenu() {
     hamburger.classList.add('active');
     mobileMenu.classList.add('open');
